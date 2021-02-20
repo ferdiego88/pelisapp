@@ -8,6 +8,12 @@ import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { ShowimagePipe } from './pipes/showimage.pipe';
+import { PeliculasComponent } from './components/peliculas/peliculas.component';
+import { PeliculascarteleraComponent } from './components/tipopelicula/peliculascartelera/peliculascartelera.component';
+import { PeliculaspopularesComponent } from './components/tipopelicula/peliculaspopulares/peliculaspopulares.component';
+import { PeliculaskidsComponent } from './components/tipopelicula/peliculaskids/peliculaskids.component';
+import { PeliculatarjetaComponent } from './components/shared/tarjetas/peliculatarjeta/peliculatarjeta.component';
 
 
 @NgModule({
@@ -17,6 +23,12 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
     HomeComponent,
     SearchComponent,
     PeliculaComponent,
+    ShowimagePipe,
+    PeliculasComponent,
+    PeliculascarteleraComponent,
+    PeliculaspopularesComponent,
+    PeliculaskidsComponent,
+    PeliculatarjetaComponent,
   ],
   imports: [
     BrowserModule,

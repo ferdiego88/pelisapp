@@ -1,0 +1,7 @@
+<div class="card-columns">
+    <div *ngFor="let pelicula of peliculas" class="card">
+        <img [src]="pelicula.poster_path | showimage:'w300'" class="card-img-top" alt="...">
+        <div class="card-img-overlay transparente">
+            <h5 class="card-title"> {{pelicula.title}} </h5>
+        </div>
+    </div>
