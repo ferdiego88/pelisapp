@@ -14,6 +14,7 @@ import { PeliculascarteleraComponent } from './components/tipopelicula/peliculas
 import { PeliculaspopularesComponent } from './components/tipopelicula/peliculaspopulares/peliculaspopulares.component';
 import { PeliculaskidsComponent } from './components/tipopelicula/peliculaskids/peliculaskids.component';
 import { PeliculatarjetaComponent } from './components/shared/tarjetas/peliculatarjeta/peliculatarjeta.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PeliculatarjetaComponent } from './components/shared/tarjetas/peliculat
     PeliculaspopularesComponent,
     PeliculaskidsComponent,
     PeliculatarjetaComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

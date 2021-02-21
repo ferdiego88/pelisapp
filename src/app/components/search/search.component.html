@@ -1,1 +1,15 @@
-<p>search works!</p>
+<div class="row">
+    <div class="col">
+        <input #termino type="text" (keyup)="buscar(termino.value)" placeholder="Ingrese película" class="form-control">
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card" *ngFor="let pelicula of peliculas">
+        <img [src]="pelicula.poster_path | showimage:'w400'" class="card-img-top" alt="pelicula.title">
+        <div class="card-body">
+            <h5 class="card-title"> {{pelicula.title}} </h5>
+            <p class="card-text"> {{pelicula.overview}} </p>
+            <button class="btn btn-outline-primary">Ver mas...</button>
+        </div>
+    </div>
+</div>

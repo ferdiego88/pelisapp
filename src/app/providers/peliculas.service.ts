@@ -21,8 +21,8 @@ export class PeliculasService {
    }
 
  getPopulares(): Observable<any>{
+   // const url = 'https://api.themoviedb.org/3/movie/550?api_key=37db1ca13ffb30d35740f27565f112a3';
     const url = `${ this.urlMovieDb}/discover/movie?sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
-    // const url = 'https://api.themoviedb.org/3/movie/550?api_key=37db1ca13ffb30d35740f27565f112a3';
     return this.http.jsonp(url, 'callback=JSONP_CALLBACK').pipe( map( (data: any) => data.results));
  }
 
@@ -45,5 +45,12 @@ export class PeliculasService {
      const url = `${ this.urlMovieDb}/movie/${idPelicula}?api_key=${this.apikey}&language=es`;
      return this.http.get(url);
   }
+
+  getMovies(termino: string): Observable<any>{
+    // https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
+     const url = `${ this.urlMovieDb}/search/movie?api_key=${this.apikey}&query=${termino}&language=es`;
+     return this.http.jsonp(url, 'callback=JSONP_CALLBACK').pipe( map( (data: any) => data.results));
+  }
+
 }
 
