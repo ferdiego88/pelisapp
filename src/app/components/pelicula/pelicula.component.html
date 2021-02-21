@@ -1,9 +1,21 @@
-<div class="card-columns">
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div class="card mb-3" style="max-width: 100%;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img [src]="pelicula.poster_path | showimage:'w400'" class="card-img-top" alt="pelicula.title">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"> {{pelicula.title | uppercase}} </h5>
+                <p class="card-text"> {{pelicula.overview}} </p>
+                <h5 class="card-title"> Fráse Célebre</h5>
+                <p>Popularidad:
+                    <span class="badge badge-primary"> {{pelicula.popularity}} </span>
+                </p>
+                <p>Voto Promedio:
+                    <span class="badge badge-primary"> {{pelicula.vote_average}} </span>
+                </p>
+                <a (click)="goHome()" class="btn btn-danger ">Regresar</a>
+            </div>
         </div>
     </div>
+</div>
