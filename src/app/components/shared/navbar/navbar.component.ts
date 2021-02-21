@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { PeliculasService } from 'src/app/providers/peliculas.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent  {
+  peliculas: any[] = [];
+  constructor(private peliculaService: PeliculasService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+buscarPelicula(termino: string){
+  this.peliculaService.getMovies(termino).subscribe(data => {
+    this.peliculas = data;
+  });
+}
 
 }

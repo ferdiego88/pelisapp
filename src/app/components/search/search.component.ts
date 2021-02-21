@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PeliculasService } from 'src/app/providers/peliculas.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { PeliculasService } from 'src/app/providers/peliculas.service';
 })
 export class SearchComponent {
   peliculas: any[] = [];
-  constructor(private peliculasService: PeliculasService) { }
+  constructor(private peliculasService: PeliculasService,
+              private router: Router) { }
 
 
   buscar(termino: string): void{
@@ -16,5 +18,8 @@ export class SearchComponent {
     this.peliculasService.getMovies(termino).subscribe(data => {
         this.peliculas = data;
     });
+  }
+  verPelicula(idPelicula: number){
+    this.router.navigate(['pelicula/busqueda', idPelicula]);
   }
 }
