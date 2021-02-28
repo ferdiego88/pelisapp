@@ -19,7 +19,7 @@ export class SearchComponent {
         this.peliculas = data;
     });
   }
-  verPelicula(idPelicula: number){
+  verPelicula(idPelicula: number): void{
     this.router.navigate(['pelicula/busqueda', idPelicula]);
   }
 }

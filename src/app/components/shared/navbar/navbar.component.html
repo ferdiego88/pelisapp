@@ -13,9 +13,9 @@
                 <a class="nav-link" [routerLink]="['/search']" routerLinkActive="active">Buscar</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <div class="form-inline my-2 my-lg-0">
             <input #termino (keyup)="buscarPelicula(termino.value)" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar Película</button>
+        </div>
     </div>
 </nav>

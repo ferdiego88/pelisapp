@@ -15,6 +15,6 @@ export class PeliculaskidsComponent {
    }
 
    verPelicula(idPelicula: number): void{
-    this.router.navigate(['pelicula', idPelicula]);
+    this.router.navigate(['pelicula', idPelicula, 'home']);
   }
 }

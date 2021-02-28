@@ -18,7 +18,7 @@ export class PeliculascarteleraComponent {
   }
 
   verPelicula(idPelicula: number): void{
-    this.router.navigate(['pelicula', idPelicula]);
+    this.router.navigate(['pelicula', idPelicula, 'home']);
   }
 
 }

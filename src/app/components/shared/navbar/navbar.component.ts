@@ -10,7 +10,7 @@ export class NavbarComponent  {
   peliculas: any[] = [];
   constructor(private peliculaService: PeliculasService) { }
 
-buscarPelicula(termino: string){
+buscarPelicula(termino: string): void{
   this.peliculaService.getMovies(termino).subscribe(data => {
     this.peliculas = data;
   });
