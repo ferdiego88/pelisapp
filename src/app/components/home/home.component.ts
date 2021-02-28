@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { PeliculasService } from '../../providers/peliculas.service';
 
 
 @Component({
@@ -7,8 +8,13 @@ import { Component} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent  {
-  constructor() {
-
+  cartelera: any;
+  populares: any;
+  kids: any;
+  constructor(public ps: PeliculasService) {
+    this.ps.getCartelera().subscribe(data => this.cartelera = data);
+    this.ps.getPopulares().subscribe(data => {this.populares = data; console.log(data); });
+    this.ps.getKidsMovies().subscribe(data => {this.kids = data; console.log(data); });
   }
 
 

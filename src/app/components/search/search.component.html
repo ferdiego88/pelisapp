@@ -1,9 +1,19 @@
-<div class="row">
-    <div class="col">
-        <input #termino type="text" (keyup)="buscar(termino.value)" placeholder="Ingrese película" class="form-control">
+<div class="container main-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Buscar:</label>
+                <input [(ngModel)]="buscar" type="text" name="" placeholder="Buscar una Película" (keyup.enter)="buscarPelicula()" class="form-control">
+            </div>
+        </div>
     </div>
-</div>
-<div class="card-columns">
-
-    <app-busqueda-tarjeta [termino]="termino.value" [pelicula]="pelicula" *ngFor="let pelicula of peliculas"></app-busqueda-tarjeta>
-</div>
+    <div class="card-columns">
+        <div *ngFor="let pelicula of peliculas" class="card">
+            <img [src]="pelicula | peliculaImagen" class="card-img-top" [alt]="pelicula.original_title">
+            <div class="card-body">
+                <h5 class="card-title"> {{pelicula.title}} </h5>
+                <p class="card-text text-justify"> {{pelicula.overview | slice:0:250}}... </p>
+                <button class="btn btn-outline-primary btn-block" type="button">Ver más...</button>
+            </div>
+        </div>
+    </div>

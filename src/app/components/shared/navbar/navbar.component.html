@@ -13,12 +13,9 @@
                 <a class="nav-link" [routerLink]="['/search']" routerLinkActive="active">Buscar</a>
             </li>
         </ul>
-        <div class="form-inline my-2 my-lg-0">
-            <input #termino (keyup)="buscarPelicula(termino.value)" class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" (ngSubmit)="buscarPelicula(termino.value)">
+            <input #termino class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar Película</button>
-        </div>
+        </form>
     </div>
 </nav>
-<div class="card-columns">
-    <app-busqueda-tarjeta [pelicula]="pelicula" *ngFor="let pelicula of peliculas"></app-busqueda-tarjeta>
-</div>

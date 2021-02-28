@@ -8,14 +8,13 @@ import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
-import { ShowimagePipe } from './pipes/showimage.pipe';
-import { PeliculasComponent } from './components/peliculas/peliculas.component';
-import { PeliculascarteleraComponent } from './components/tipopelicula/peliculascartelera/peliculascartelera.component';
-import { PeliculaspopularesComponent } from './components/tipopelicula/peliculaspopulares/peliculaspopulares.component';
-import { PeliculaskidsComponent } from './components/tipopelicula/peliculaskids/peliculaskids.component';
+import { FormsModule } from '@angular/forms';
+// Pipes
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 import { PeliculatarjetaComponent } from './components/shared/tarjetas/peliculatarjeta/peliculatarjeta.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { BusquedaTarjetaComponent } from './components/shared/tarjetas/busqueda-tarjeta/busqueda-tarjeta.component';
+import { GaleriaComponent } from './components/home/galeria.component';
 
 
 @NgModule({
@@ -25,20 +24,18 @@ import { BusquedaTarjetaComponent } from './components/shared/tarjetas/busqueda-
     HomeComponent,
     SearchComponent,
     PeliculaComponent,
-    ShowimagePipe,
-    PeliculasComponent,
-    PeliculascarteleraComponent,
-    PeliculaspopularesComponent,
-    PeliculaskidsComponent,
     PeliculatarjetaComponent,
     LoadingComponent,
     BusquedaTarjetaComponent,
+    PeliculaImagenPipe,
+    GaleriaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

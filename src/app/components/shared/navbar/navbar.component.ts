@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PeliculasService } from 'src/app/providers/peliculas.service';
 
 @Component({
@@ -8,13 +9,24 @@ import { PeliculasService } from 'src/app/providers/peliculas.service';
 })
 export class NavbarComponent  {
   peliculas: any[] = [];
-  constructor(private peliculaService: PeliculasService) { }
+  constructor(private peliculaService: PeliculasService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
+
+    this.activatedRoute.params.subscribe(param => {
+      if (param.termino) {
+        this.peliculaService.buscarPeliculas(param.termino).subscribe(data => {
+          this.peliculas = data;
+      });
+      }
+    });
+  }
 
 buscarPelicula(termino: string): void{
-  this.peliculaService.getMovies(termino).subscribe(data => {
-    this.peliculas = data;
-  });
-  console.log(termino);
+  if (termino.length === 0) {
+    return;
+  }
+  this.router.navigate(['search', termino]);
 }
 
 }
