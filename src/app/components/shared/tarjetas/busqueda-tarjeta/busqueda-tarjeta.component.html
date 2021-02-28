@@ -1,0 +1,8 @@
+<div class="card">
+    <img [src]="pelicula.poster_path | showimage:'w400'" class="card-img-top" alt="pelicula.title">
+    <div class="card-body">
+        <h5 class="card-title"> {{pelicula.title}} </h5>
+        <p class="card-text"> {{pelicula.overview}} </p>
+        <button (click)="verPelicula(pelicula.id)" class="btn btn-outline-primary">Ver mas...</button>
+    </div>
+</div>

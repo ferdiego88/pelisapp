@@ -15,6 +15,7 @@ import { PeliculaspopularesComponent } from './components/tipopelicula/peliculas
 import { PeliculaskidsComponent } from './components/tipopelicula/peliculaskids/peliculaskids.component';
 import { PeliculatarjetaComponent } from './components/shared/tarjetas/peliculatarjeta/peliculatarjeta.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { BusquedaTarjetaComponent } from './components/shared/tarjetas/busqueda-tarjeta/busqueda-tarjeta.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     PeliculaskidsComponent,
     PeliculatarjetaComponent,
     LoadingComponent,
+    BusquedaTarjetaComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,12 +4,6 @@
     </div>
 </div>
 <div class="card-columns">
-    <div class="card" *ngFor="let pelicula of peliculas">
-        <img [src]="pelicula.poster_path | showimage:'w400'" class="card-img-top" alt="pelicula.title">
-        <div class="card-body">
-            <h5 class="card-title"> {{pelicula.title}} </h5>
-            <p class="card-text"> {{pelicula.overview}} </p>
-            <button (click)="verPelicula(pelicula.id)" class="btn btn-outline-primary">Ver mas...</button>
-        </div>
-    </div>
+
+    <app-busqueda-tarjeta [termino]="termino.value" [pelicula]="pelicula" *ngFor="let pelicula of peliculas"></app-busqueda-tarjeta>
 </div>
