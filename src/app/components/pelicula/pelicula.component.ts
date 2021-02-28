@@ -9,28 +9,18 @@ import { PeliculasService } from '../../providers/peliculas.service';
 })
 export class PeliculaComponent{
   pelicula: any = [];
-  @Input() termino = '';
-  constructor(private peliculaService: PeliculasService,
-              private activatedRoute: ActivatedRoute,
-              private router: Router )
+  regresarA = '';
+  busqueda = '';
+  constructor(public ps: PeliculasService,
+              public activatedRouter: ActivatedRoute)
 {
-  this.activatedRoute.params.subscribe(param => {
-     this.peliculaService.getMovie(param.idPelicula).subscribe(data => {
-      this.pelicula = data; console.log(this.pelicula);
-     } );
-  });
-}
-
-goHome(): void{
-
-this.activatedRoute.url.subscribe(urlActivated => urlActivated
-  .find(valor => {
-    if (valor.path === 'home') {
-      this.router.navigate(['/home']);
-    }else if ( valor.path === 'buscar'){
-      this.activatedRoute.params.subscribe(param =>
-        this.router.navigate(['pelicula/buscar/', param.termino]));
-    }
-  } ));
+this.activatedRouter.params.subscribe(parametros => {
+  if (parametros.busqueda) {
+    this.busqueda = parametros.busqueda;
+  }
+  this.regresarA = parametros.pag;
+  console.log(this.regresarA);
+  this.ps.getMovie(parametros.id).subscribe(pelicula => this.pelicula = pelicula);
+});
 }
 }
