@@ -14,6 +14,7 @@ buscarPelicula(termino: string): void{
   this.peliculaService.getMovies(termino).subscribe(data => {
     this.peliculas = data;
   });
+  console.log(termino);
 }
 
 }
