@@ -33,8 +33,7 @@ export class PeliculasService {
     // &primary_release_date.lte=2020-02-20&api_key=37db1ca13ffb30d35740f27565f112a3
     const desde = new Date();
     const hasta = new Date();
-    desde.setDate(desde.getDate());
-    hasta.setDate(hasta.getDate() + 20);
+    hasta.setDate(hasta.getDate() + 5);
     const desdeStr = `${desde.getFullYear()}-0${desde.getMonth() + 1}-${desde.getDate()}`;
     const hastaStr = `${desde.getFullYear()}-0${desde.getMonth() + 1}-${desde.getDate()}`;
     const url = `${ this.urlMovieDb}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apikey}&language=es`;
